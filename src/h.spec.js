@@ -62,3 +62,16 @@ process.on("exit", () => callTracker.verify());
     "<div><p>I am a nested component</p>\nAnd some text</div>"
   );
 }
+
+// should render a div with an inline style object
+{
+  const result = h(
+    "div",
+    { style: "color: red; font-size: 16px;" },
+    "Styled div"
+  );
+  strictEqual(
+    result,
+    '<div style="color: red; font-size: 16px;">Styled div</div>'
+  );
+}
