@@ -116,3 +116,12 @@ process.on("exit", () => callTracker.verify());
     '<&lt;script&gt;alert(&apos;xss&apos;);&lt;/script&gt; class="hacked">Hack me</&lt;script&gt;alert(&apos;xss&apos;);&lt;/script&gt;>'
   );
 }
+
+// should render doctype when rendering html tag
+{
+  const result = h("html", null, h("head", null, h("title", null, "My title")));
+  strictEqual(
+    result,
+    "<!DOCTYPE html><html><head><title>My title</title></head></html>"
+  );
+}
