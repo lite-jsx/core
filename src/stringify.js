@@ -1,3 +1,8 @@
+/**
+ * Converts a JavaScript value to a string.
+ * @param {unknown} payload - The value to be converted.
+ * @returns {string} The string representation of the given value.
+ */
 export const stringify = (payload = "") => {
   const types = ["string", "boolean", "number", "function"];
   const type = typeof payload;
