@@ -81,3 +81,18 @@ process.on("exit", () => callTracker.verify());
   const result = h(null, null, h("h1", null, "hello"), h("h2", null, "world"));
   strictEqual(result, "<h1>hello</h1>\n<h2>world</h2>");
 }
+
+// should render multiple nested fragments
+{
+  const result = h(
+    null,
+    null,
+    h("h1", null, "Hello"),
+    h(null, null, h("h2", null, "Nested"), h("h2", null, "Fragments")),
+    h("h3", null, "World")
+  );
+  strictEqual(
+    result,
+    "<h1>Hello</h1>\n<h2>Nested</h2>\n<h2>Fragments</h2>\n<h3>World</h3>"
+  );
+}
