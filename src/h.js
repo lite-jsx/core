@@ -1,17 +1,6 @@
 import { stringify } from "./stringify.js";
 import { sanitize } from "./sanitize.js";
-
-const generateTag = (tagName, props, children) => {
-  const result = `<${sanitize(tagName)}${
-    props ? " " + props : ""
-  }>${children}</${sanitize(tagName)}>`;
-
-  if (tagName === "html") {
-    return `<!DOCTYPE html>\n${result}`;
-  }
-
-  return result;
-};
+import { generateTag } from "./generate-tag.js";
 
 const formatProps = (props) => {
   return (
