@@ -1,15 +1,5 @@
 import { stringify } from "./stringify.js";
-
-const sanitize = (str) => {
-  const characters = {
-    "&": "amp",
-    "<": "lt",
-    ">": "gt",
-    '"': "quot",
-    "'": "apos",
-  };
-  return String(str).replace(/[&<>"']/g, (s) => `&${characters[s]};`);
-};
+import { sanitize } from "./sanitize.js";
 
 const generateTag = (tagName, props, children) => {
   const result = `<${sanitize(tagName)}${
