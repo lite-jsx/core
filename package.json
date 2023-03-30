@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node src/h.spec.js"
+    "test": "node tests"
   },
   "keywords": [],
   "author": "",
