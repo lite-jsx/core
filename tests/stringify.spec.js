@@ -43,4 +43,14 @@ export default function () {
     strictEqual(stringify(null), "");
     strictEqual(stringify(undefined), "");
   }
+
+  // should stringify an object child
+  {
+    strictEqual(stringify({ foo: "bar" }), '{"foo":"bar"}');
+    strictEqual(stringify({ foo: { bar: "baz" } }), '{"foo":{"bar":"baz"}}');
+    strictEqual(
+      stringify({ foo: [{ bar: "baz" }] }),
+      '{"foo":[{"bar":"baz"}]}'
+    );
+  }
 }
