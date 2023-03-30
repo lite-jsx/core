@@ -1,13 +1,26 @@
 {
   "name": "simple-jsx",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple library for generating HTML using JSX-like syntax",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "node tests"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Daniel Prates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danprates/simple-jsx"
+  },
+  "bugs": {
+    "url": "https://github.com/danprates/simple-jsx/issues"
+  },
+  "homepage": "https://github.com/danprates/simple-jsx#readme",
+  "keywords": [
+    "jsx",
+    "html",
+    "library",
+    "simple"
+  ],
+  "license": "MIT"
 }
