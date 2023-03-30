@@ -47,7 +47,13 @@ export const h = (tagName, props, ...children) => {
       .join(" ");
   }
 
-  return `<${sanitize(tagName)}${
+  const result = `<${sanitize(tagName)}${
     stringifiedProps ? " " + stringifiedProps : ""
   }>${stringifiedChildren}</${sanitize(tagName)}>`;
+
+  if (tagName === "html") {
+    return `<!DOCTYPE html>${result}`;
+  }
+
+  return result;
 };
