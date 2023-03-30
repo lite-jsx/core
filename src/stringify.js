@@ -1,4 +1,4 @@
-export const stringify = (child) => {
+export const stringify = (child = "") => {
   let stringifiedChild = typeof child === "string" ? child : "";
   if (!stringifiedChild) {
     if (child instanceof String) {
