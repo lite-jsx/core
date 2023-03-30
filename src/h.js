@@ -20,6 +20,11 @@ function stringifyChildren(child) {
   return stringifiedChild;
 }
 
+let characters = { "&": "amp", "<": "lt", ">": "gt", '"': "quot", "'": "apos" };
+
+let sanitize = (str) =>
+  String(str).replace(/[&<>"']/g, (s) => `&${characters[s]};`);
+
 export const h = (tagName, props, ...children) => {
   if (!tagName || tagName === null) {
     return children.join("\n");
@@ -34,10 +39,10 @@ export const h = (tagName, props, ...children) => {
   if (props) {
     stringifiedProps = Object.entries(props)
       .map(([key, value]) => {
-        if (value && typeof value.toString === "function") {
+        if (value && typeof value === "function") {
           return `${key}="${value.toString()}"`;
         }
-        return `${key}="${value}"`;
+        return `${key}="${sanitize(value)}"`;
       })
       .join(" ");
   }
