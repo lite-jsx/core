@@ -18,3 +18,9 @@ import { stringify } from "./stringify.js";
   const child = 42;
   strictEqual(stringify(child), "42");
 }
+
+// should stringify a function child
+{
+  const child = () => console.log("Hello, world!");
+  strictEqual(stringify(child), '() => console.log("Hello, world!")');
+}
