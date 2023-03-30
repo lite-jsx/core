@@ -30,3 +30,9 @@ import { stringify } from "./stringify.js";
   const child = "";
   strictEqual(stringify(child), "");
 }
+
+// should stringify a boolean child
+{
+  strictEqual(stringify(false), "false");
+  strictEqual(stringify(true), "true");
+}
