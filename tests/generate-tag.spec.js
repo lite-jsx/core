@@ -17,4 +17,12 @@ export default function () {
       '<h1 class="my-class">hello</h1>'
     );
   }
+
+  // should render tag without any props when props are not provided
+  {
+    strictEqual(generateTag("h1", null, "hello"), "<h1>hello</h1>");
+    strictEqual(generateTag("h1", undefined, "hello"), "<h1>hello</h1>");
+    strictEqual(generateTag("h1", "", "hello"), "<h1>hello</h1>");
+    strictEqual(generateTag("h1", false, "hello"), "<h1>hello</h1>");
+  }
 }
