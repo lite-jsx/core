@@ -1,4 +1,4 @@
-import { stringifyChildren } from "./stringify-childen.js";
+import { stringify } from "./stringify.js";
 
 const sanitize = (str) => {
   const characters = {
@@ -20,7 +20,7 @@ export const h = (tagName, props, ...children) => {
     return tagName({ ...props, children });
   }
 
-  const stringifiedChildren = children.map(stringifyChildren).join("\n");
+  const stringifiedChildren = children.map(stringify).join("\n");
   let stringifiedProps = "";
   if (props) {
     stringifiedProps = Object.entries(props)

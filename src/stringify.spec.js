@@ -1,20 +1,20 @@
 import { strictEqual } from "node:assert";
-import { stringifyChildren } from "./stringify-childen.js";
+import { stringify } from "./stringify.js";
 
 // should stringify a string child
 {
   const child = "Hello, world!";
-  strictEqual(stringifyChildren(child), "Hello, world!");
+  strictEqual(stringify(child), "Hello, world!");
 }
 
 // should stringify an array of string children
 {
   const children = ["Hello, ", "world!"];
-  strictEqual(stringifyChildren(children), "Hello, world!");
+  strictEqual(stringify(children), "Hello, world!");
 }
 
 // should stringify a number child
 {
   const child = 42;
-  strictEqual(stringifyChildren(child), "42");
+  strictEqual(stringify(child), "42");
 }
