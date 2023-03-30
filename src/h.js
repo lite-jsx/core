@@ -1,20 +1,6 @@
 import { stringify } from "./stringify.js";
-import { sanitize } from "./sanitize.js";
+import { formatProps } from "./format-props.js";
 import { generateTag } from "./generate-tag.js";
-
-const formatProps = (props) => {
-  return (
-    props &&
-    Object.entries(props)
-      .map(([key, value]) => {
-        if (typeof value === "function") {
-          return `${key}="${stringify(value)}"`;
-        }
-        return `${key}="${sanitize(stringify(value))}"`;
-      })
-      .join(" ")
-  );
-};
 
 export const h = (tagName, props, ...children) => {
   if (!tagName || tagName === null) {
