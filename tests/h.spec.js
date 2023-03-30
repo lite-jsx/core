@@ -127,7 +127,7 @@ export default function () {
     );
     strictEqual(
       result,
-      "<!DOCTYPE html><html><head><title>My title</title></head></html>"
+      "<!DOCTYPE html>\n<html><head><title>My title</title></head></html>"
     );
   }
 }

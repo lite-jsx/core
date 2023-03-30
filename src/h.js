@@ -11,6 +11,32 @@ const sanitize = (str) => {
   return String(str).replace(/[&<>"']/g, (s) => `&${characters[s]};`);
 };
 
+const generateTag = (tagName, props, children) => {
+  const result = `<${sanitize(tagName)}${
+    props ? " " + props : ""
+  }>${children}</${sanitize(tagName)}>`;
+
+  if (tagName === "html") {
+    return `<!DOCTYPE html>\n${result}`;
+  }
+
+  return result;
+};
+
+const formatProps = (props) => {
+  return (
+    props &&
+    Object.entries(props)
+      .map(([key, value]) => {
+        if (typeof value === "function") {
+          return `${key}="${stringify(value)}"`;
+        }
+        return `${key}="${sanitize(stringify(value))}"`;
+      })
+      .join(" ")
+  );
+};
+
 export const h = (tagName, props, ...children) => {
   if (!tagName || tagName === null) {
     return children.join("\n");
@@ -21,25 +47,7 @@ export const h = (tagName, props, ...children) => {
   }
 
   const stringifiedChildren = children.map(stringify).join("\n");
-  let stringifiedProps = "";
-  if (props) {
-    stringifiedProps = Object.entries(props)
-      .map(([key, value]) => {
-        if (value && typeof value === "function") {
-          return `${key}="${value.toString()}"`;
-        }
-        return `${key}="${sanitize(value)}"`;
-      })
-      .join(" ");
-  }
+  const stringifiedProps = formatProps(props);
 
-  const result = `<${sanitize(tagName)}${
-    stringifiedProps ? " " + stringifiedProps : ""
-  }>${stringifiedChildren}</${sanitize(tagName)}>`;
-
-  if (tagName === "html") {
-    return `<!DOCTYPE html>${result}`;
-  }
-
-  return result;
+  return generateTag(tagName, stringifiedProps, stringifiedChildren);
 };
