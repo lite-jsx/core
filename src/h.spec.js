@@ -75,3 +75,9 @@ process.on("exit", () => callTracker.verify());
     '<div style="color: red; font-size: 16px;">Styled div</div>'
   );
 }
+
+// should render the components using fragments
+{
+  const result = h(null, null, h("h1", null, "hello"), h("h2", null, "world"));
+  strictEqual(result, "<h1>hello</h1>\n<h2>world</h2>");
+}
