@@ -39,3 +39,9 @@ process.on("exit", () => callTracker.verify());
     '<button onclick="() => alert("Button clicked!")">Click me!</button>'
   );
 }
+
+// should render a text node when a string is passed as a child
+{
+  const result = h("div", null, "Just a string");
+  strictEqual(result, "<div>Just a string</div>");
+}
