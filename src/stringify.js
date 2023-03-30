@@ -10,5 +10,9 @@ export const stringify = (payload = "") => {
     return payload.map(stringify).join("");
   }
 
+  if (payload && type === "object") {
+    return JSON.stringify(payload);
+  }
+
   return "";
 };
