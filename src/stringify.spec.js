@@ -24,3 +24,9 @@ import { stringify } from "./stringify.js";
   const child = () => console.log("Hello, world!");
   strictEqual(stringify(child), '() => console.log("Hello, world!")');
 }
+
+// should stringify a empty child
+{
+  const child = "";
+  strictEqual(stringify(child), "");
+}
