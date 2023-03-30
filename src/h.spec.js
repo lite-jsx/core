@@ -29,3 +29,13 @@ process.on("exit", () => callTracker.verify());
   const result = h(MyComponent, { name: "John" });
   strictEqual(result, "<div>Hello, John!</div>");
 }
+
+// should render a button with an onclick event handler
+{
+  const handleClick = () => alert("Button clicked!");
+  const result = h("button", { onclick: handleClick }, "Click me!");
+  strictEqual(
+    result,
+    '<button onclick="() => alert("Button clicked!")">Click me!</button>'
+  );
+}
