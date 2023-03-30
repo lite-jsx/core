@@ -25,4 +25,24 @@ export default function () {
     strictEqual(generateTag("h1", "", "hello"), "<h1>hello</h1>");
     strictEqual(generateTag("h1", false, "hello"), "<h1>hello</h1>");
   }
+
+  // should render tag without any children when children are not provided
+  {
+    strictEqual(
+      generateTag("h1", 'class="my-class"', null),
+      '<h1 class="my-class">null</h1>'
+    );
+    strictEqual(
+      generateTag("h1", 'class="my-class"', undefined),
+      '<h1 class="my-class">undefined</h1>'
+    );
+    strictEqual(
+      generateTag("h1", 'class="my-class"', ""),
+      '<h1 class="my-class"></h1>'
+    );
+    strictEqual(
+      generateTag("h1", 'class="my-class"', false),
+      '<h1 class="my-class">false</h1>'
+    );
+  }
 }
