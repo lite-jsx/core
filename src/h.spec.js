@@ -45,3 +45,9 @@ process.on("exit", () => callTracker.verify());
   const result = h("div", null, "Just a string");
   strictEqual(result, "<div>Just a string</div>");
 }
+
+// should render an empty div when no children are provided
+{
+  const result = h("div");
+  strictEqual(result, "<div></div>");
+}
