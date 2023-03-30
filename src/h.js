@@ -21,6 +21,10 @@ function stringifyChildren(child) {
 }
 
 export const h = (tagName, props, ...children) => {
+  if (!tagName || tagName === null) {
+    return children.join("\n");
+  }
+
   if (typeof tagName === "function") {
     return tagName({ ...props, children });
   }
