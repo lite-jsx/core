@@ -96,3 +96,13 @@ process.on("exit", () => callTracker.verify());
     "<h1>Hello</h1>\n<h2>Nested</h2>\n<h2>Fragments</h2>\n<h3>World</h3>"
   );
 }
+
+// should sanitize props to avoid XSS attacks
+{
+  const malicious = "<script>alert('xss');</script>";
+  const result = h("button", { onclick: malicious }, "Hack me");
+  strictEqual(
+    result,
+    '<button onclick="&lt;script&gt;alert(&apos;xss&apos;);&lt;/script&gt;">Hack me</button>'
+  );
+}
