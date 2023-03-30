@@ -37,4 +37,10 @@ export default function () {
     strictEqual(stringify(false), "false");
     strictEqual(stringify(true), "true");
   }
+
+  // should stringify a nullish child
+  {
+    strictEqual(stringify(null), "");
+    strictEqual(stringify(undefined), "");
+  }
 }
