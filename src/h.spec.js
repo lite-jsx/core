@@ -106,3 +106,13 @@ process.on("exit", () => callTracker.verify());
     '<button onclick="&lt;script&gt;alert(&apos;xss&apos;);&lt;/script&gt;">Hack me</button>'
   );
 }
+
+// should sanitize tagName to avoid XSS attacks
+{
+  const malicious = "<script>alert('xss');</script>";
+  const result = h(malicious, { class: "hacked" }, "Hack me");
+  strictEqual(
+    result,
+    '<&lt;script&gt;alert(&apos;xss&apos;);&lt;/script&gt; class="hacked">Hack me</&lt;script&gt;alert(&apos;xss&apos;);&lt;/script&gt;>'
+  );
+}
