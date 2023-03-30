@@ -1,0 +1,12 @@
+{
+  "name": "simple-jsx",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/h.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
