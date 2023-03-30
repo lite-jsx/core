@@ -1,6 +1,6 @@
 {
   "name": "simple-jsx",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha",
   "description": "A simple library for generating HTML using JSX-like syntax",
   "main": "src/index.js",
   "type": "module",
