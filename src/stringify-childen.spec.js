@@ -12,3 +12,9 @@ import { stringifyChildren } from "./stringify-childen.js";
   const children = ["Hello, ", "world!"];
   strictEqual(stringifyChildren(children), "Hello, world!");
 }
+
+// should stringify a number child
+{
+  const child = 42;
+  strictEqual(stringifyChildren(child), "42");
+}
