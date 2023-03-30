@@ -47,7 +47,7 @@ export const h = (tagName, props, ...children) => {
       .join(" ");
   }
 
-  return `<${tagName}${
+  return `<${sanitize(tagName)}${
     stringifiedProps ? " " + stringifiedProps : ""
-  }>${stringifiedChildren}</${tagName}>`;
+  }>${stringifiedChildren}</${sanitize(tagName)}>`;
 };
