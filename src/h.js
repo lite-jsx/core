@@ -20,10 +20,16 @@ function stringifyChildren(child) {
   return stringifiedChild;
 }
 
-let characters = { "&": "amp", "<": "lt", ">": "gt", '"': "quot", "'": "apos" };
-
-let sanitize = (str) =>
-  String(str).replace(/[&<>"']/g, (s) => `&${characters[s]};`);
+const sanitize = (str) => {
+  const characters = {
+    "&": "amp",
+    "<": "lt",
+    ">": "gt",
+    '"': "quot",
+    "'": "apos",
+  };
+  return String(str).replace(/[&<>"']/g, (s) => `&${characters[s]};`);
+};
 
 export const h = (tagName, props, ...children) => {
   if (!tagName || tagName === null) {
