@@ -51,3 +51,14 @@ process.on("exit", () => callTracker.verify());
   const result = h("div");
   strictEqual(result, "<div></div>");
 }
+
+// should render a nested component
+{
+  const SubComponent = () => h("p", null, "I am a nested component");
+  const MyComponent = () => h("div", null, h(SubComponent), "And some text");
+  const result = h(MyComponent);
+  strictEqual(
+    result,
+    "<div><p>I am a nested component</p>\nAnd some text</div>"
+  );
+}
