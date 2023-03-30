@@ -6,3 +6,9 @@ import { stringifyChildren } from "./stringify-childen.js";
   const child = "Hello, world!";
   strictEqual(stringifyChildren(child), "Hello, world!");
 }
+
+// should stringify an array of string children
+{
+  const children = ["Hello, ", "world!"];
+  strictEqual(stringifyChildren(children), "Hello, world!");
+}
