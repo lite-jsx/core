@@ -1,0 +1,27 @@
+name: Publish on NPM
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test project
+        run: npm run test
+
+      - name: Publish to NPM
+        uses: js-actions/npm@master
+        with:
+          args: publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
