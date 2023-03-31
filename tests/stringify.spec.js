@@ -1,7 +1,7 @@
-import { strictEqual } from "node:assert";
-import { stringify } from "../src/stringify.js";
+const { strictEqual } = require("node:assert");
+const { stringify } = require("../src/stringify");
 
-export default function () {
+module.exports = () => {
   // should stringify a string child
   {
     const child = "Hello, world!";
@@ -53,4 +53,4 @@ export default function () {
       '{"foo":[{"bar":"baz"}]}'
     );
   }
-}
+};

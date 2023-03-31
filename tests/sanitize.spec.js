@@ -1,7 +1,7 @@
-import { strictEqual } from "node:assert";
-import { sanitize } from "../src/sanitize.js";
+const { strictEqual } = require("node:assert");
+const { sanitize } = require("../src/sanitize");
 
-export default function () {
+module.exports = () => {
   // should sanitize special characters
   {
     strictEqual(sanitize("&"), "&amp;");
@@ -10,4 +10,4 @@ export default function () {
     strictEqual(sanitize('"'), "&quot;");
     strictEqual(sanitize("'"), "&apos;");
   }
-}
+};

@@ -1,7 +1,7 @@
-import { strictEqual } from "node:assert";
-import { generateTag } from "../src/generate-tag.js";
+const { strictEqual } = require("node:assert");
+const { generateTag } = require("../src/generate-tag");
 
-export default function () {
+module.exports = () => {
   // should render DOCTYPE when html tag is provided
   {
     strictEqual(
@@ -45,4 +45,4 @@ export default function () {
       '<h1 class="my-class">false</h1>'
     );
   }
-}
+};

@@ -4,7 +4,7 @@
  * @param {string} str - The string to be sanitized.
  * @returns {string} The sanitized string.
  */
-export const sanitize = (str) => {
+const sanitize = (str) => {
   const characters = {
     "&": "amp",
     "<": "lt",
@@ -14,3 +14,5 @@ export const sanitize = (str) => {
   };
   return String(str).replace(/[&<>"']/g, (s) => `&${characters[s]};`);
 };
+
+module.exports = { sanitize };

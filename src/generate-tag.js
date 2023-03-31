@@ -1,4 +1,4 @@
-import { sanitize } from "./sanitize.js";
+const { sanitize } = require("./sanitize");
 
 /**
  * Generates an HTML tag with the specified name, properties, and children.
@@ -7,7 +7,7 @@ import { sanitize } from "./sanitize.js";
  * @param {string} children - The children of the tag, as a string.
  * @returns {string} The complete HTML tag, including any necessary opening and closing tags.
  */
-export const generateTag = (tagName, props, children) => {
+const generateTag = (tagName, props, children) => {
   const result = `<${sanitize(tagName)}${
     props ? " " + props : ""
   }>${children}</${sanitize(tagName)}>`;
@@ -18,3 +18,5 @@ export const generateTag = (tagName, props, children) => {
 
   return result;
 };
+
+module.exports = { generateTag };

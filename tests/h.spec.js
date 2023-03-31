@@ -1,7 +1,7 @@
-import { strictEqual } from "node:assert";
-import { h } from "../src/h.js";
+const { strictEqual } = require("node:assert");
+const { h } = require("../src/h");
 
-export default function () {
+module.exports = () => {
   // should render a div with a class and some text content
   {
     const result = h("div", { class: "my-class" }, "Hello, world!");
@@ -130,4 +130,4 @@ export default function () {
       "<!DOCTYPE html>\n<html><head><title>My title</title></head></html>"
     );
   }
-}
+};

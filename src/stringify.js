@@ -3,7 +3,7 @@
  * @param {unknown} payload - The value to be converted.
  * @returns {string} The string representation of the given value.
  */
-export const stringify = (payload = "") => {
+const stringify = (payload = "") => {
   const types = ["string", "boolean", "number", "function"];
   const type = typeof payload;
 
@@ -21,3 +21,5 @@ export const stringify = (payload = "") => {
 
   return "";
 };
+
+module.exports = { stringify };

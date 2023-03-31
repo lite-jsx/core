@@ -1,7 +1,7 @@
-import h from "./h.spec.js";
-import stringify from "./stringify.spec.js";
-import sanitize from "./sanitize.spec.js";
-import generateTag from "./generate-tag.spec.js";
+const h = require("./h.spec");
+const stringify = require("./stringify.spec");
+const sanitize = require("./sanitize.spec");
+const generateTag = require("./generate-tag.spec");
 
 h();
 stringify();

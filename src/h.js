@@ -1,6 +1,6 @@
-import { stringify } from "./stringify.js";
-import { formatProps } from "./format-props.js";
-import { generateTag } from "./generate-tag.js";
+const { stringify } = require("./stringify");
+const { formatProps } = require("./format-props");
+const { generateTag } = require("./generate-tag");
 
 /**
  * Creates an HTML element with the given tag name, props, and children.
@@ -9,7 +9,7 @@ import { generateTag } from "./generate-tag.js";
  * @param {string|string[]|number|boolean|null} children - The child or children of the element.
  * @returns {JSX.Element} The HTML string representation of the element.
  */
-export const h = (tagName, props, ...children) => {
+const h = (tagName, props, ...children) => {
   if (!tagName || tagName === null) {
     return children.join("\n");
   }
@@ -23,3 +23,5 @@ export const h = (tagName, props, ...children) => {
 
   return generateTag(tagName, stringifiedProps, stringifiedChildren);
 };
+
+module.exports = { h };

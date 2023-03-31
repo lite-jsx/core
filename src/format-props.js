@@ -1,12 +1,12 @@
-import { sanitize } from "./sanitize.js";
-import { stringify } from "./stringify.js";
+const { sanitize } = require("./sanitize");
+const { stringify } = require("./stringify");
 
 /**
  * Formats a props object as a string of HTML attributes.
  * @param {Record<string, unknown>} props - The props object.
  * @returns {string} A string of HTML attributes.
  */
-export const formatProps = (props) => {
+const formatProps = (props) => {
   return (
     props &&
     Object.entries(props)
@@ -19,3 +19,5 @@ export const formatProps = (props) => {
       .join(" ")
   );
 };
+
+module.exports = { formatProps };

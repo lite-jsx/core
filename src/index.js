@@ -1,1 +1,1 @@
-export * from "./h.js";
+module.exports = require("./h");
