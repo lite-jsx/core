@@ -1,6 +1,6 @@
-# Simple JSX
+# Lite JSX
 
-Simple JSX is a lightweight JavaScript library that allows you to create and manipulate JSX elements using only vanilla JavaScript.
+Lite JSX is a lightweight JavaScript library that allows you to create and manipulate JSX elements using only vanilla JavaScript.
 
 ## Purpose of the Project
 
@@ -12,17 +12,17 @@ The library is designed to be flexible, easy to use, and fully compatible with m
 
 ## Installation
 
-You can install Simple JSX via npm:
+You can install Lite JSX via npm:
 
 ```bash
-npm install simple-jsx
+npm install lite-jsx
 ```
 
 ---
 
 ## Creating Elements
 
-To create a JSX element, you can use the `h` function provided by Simple JSX:
+To create a JSX element, you can use the `h` function provided by Lite JSX:
 
 ```js
 const element = h("div", { class: "my-class" }, "Hello, world!");
@@ -72,10 +72,10 @@ Creates a new JSX element.
 
 ## Contributing
 
-If you'd like to contribute to Simple JSX, please feel free to submit a pull request or open an issue on GitHub:
+If you'd like to contribute to Lite JSX, please feel free to submit a pull request or open an issue on GitHub:
 
-https://github.com/your-github-username/simple-jsx
+https://github.com/your-github-username/lite-jsx
 
 ## License
 
-Simple JSX is licensed under the [MIT License](https://github.com/danprates/simple-jsx/blob/master/LICENSE).
+Lite JSX is licensed under the [MIT License](https://github.com/danprates/lite-jsx/blob/master/LICENSE).
