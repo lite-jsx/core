@@ -2,14 +2,6 @@ const { strictEqual } = require("node:assert");
 const { generateTag } = require("../src/generate-tag");
 
 module.exports = () => {
-  // should render DOCTYPE when html tag is provided
-  {
-    strictEqual(
-      generateTag("html", 'class="my-class"', "<title>hello</title>"),
-      '<!DOCTYPE html>\n<html class="my-class"><title>hello</title></html>'
-    );
-  }
-
   // should render correct tag when valid params are provided
   {
     strictEqual(

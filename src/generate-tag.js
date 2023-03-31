@@ -12,10 +12,6 @@ const generateTag = (tagName, props, children) => {
     props ? " " + props : ""
   }>${children}</${sanitize(tagName)}>`;
 
-  if (tagName === "html") {
-    return `<!DOCTYPE html>\n${result}`;
-  }
-
   return result;
 };
 
