@@ -4,10 +4,10 @@ const { generateTag } = require("./generate-tag");
 
 /**
  * Creates an HTML element with the given tag name, props, and children.
- * @param {string} tagName - The name of the HTML tag.
+ * @param {string|Function} tagName - The name of the HTML tag.
  * @param {Record<string, any>} props - An object containing the props to apply to the element.
  * @param {string|string[]|number|boolean|null} children - The child or children of the element.
- * @returns {JSX.Element} The HTML string representation of the element.
+ * @returns {string} The HTML string representation of the element.
  */
 const h = (tagName, props, ...children) => {
   if (!tagName || tagName === null) {

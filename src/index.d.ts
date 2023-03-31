@@ -1,30 +1,21 @@
-declare namespace JSX {
-  interface Element {}
+declare namespace LiteJSX {
+  type Child = string | number | boolean | null | undefined | ChildArray;
 
-  interface IntrinsicElements {
-    [elemName: string]: any;
+  interface ChildArray extends Array<Child> {}
+
+  interface Attributes {
+    [propName: string]: any;
   }
+
+  interface Component<P = Attributes> {
+    (props: P & { children?: Child }): string;
+  }
+
+  function h(
+    tag: string | Component,
+    props?: Attributes | undefined | null,
+    ...children: ChildArray
+  ): string;
 }
 
-type Child = string | number | boolean | null | undefined | ChildArray;
-
-interface ChildArray extends Array<Child> {}
-
-interface Attributes {
-  [propName: string]: any;
-}
-
-interface FunctionalComponent<P = Attributes> {
-  (props: P & { children?: Child }): JSX.Element;
-}
-
-interface Component<P = Attributes> {
-  props: P & { children?: Child };
-  render(): JSX.Element;
-}
-
-declare function h(
-  tag: string | FunctionalComponent | typeof Component,
-  props?: Attributes,
-  ...children: Child[]
-): JSX.Element;
+export = LiteJSX;
