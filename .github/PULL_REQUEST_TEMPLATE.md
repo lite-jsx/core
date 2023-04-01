@@ -18,6 +18,7 @@ What kind of change does this PR introduce?
 - [ ] Refactoring (no functional changes, no api changes)
 - [ ] Build related changes
 - [ ] CI related changes
+- [ ] Documentation related changes
 - [ ] Other... Please describe:
 
 ## What is the current behavior?
