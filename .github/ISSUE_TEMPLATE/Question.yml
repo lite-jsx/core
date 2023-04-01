@@ -1,0 +1,23 @@
+name: "\U00002753 Question"
+description: "I have a question \U0001F914"
+labels: ["type: question \U00002753", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## :warning: We use GitHub Issues to track bug reports, feature requests and regressions
+
+        If you are not sure that your issue is a question, you could:
+
+        - use [StackOverflow using the tag `lite-jsx`](https://stackoverflow.com/questions/tagged/lite-jsx)
+
+        ---
+
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: "What is your question?"
+      description: "A clear and concise description of your question"
+      placeholder: |
+        I have a question about ...
