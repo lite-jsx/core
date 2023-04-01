@@ -1,0 +1,14 @@
+name: Quality Gate
+
+on:
+  pull_request:
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm test
