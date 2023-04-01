@@ -11,4 +11,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - uses: devilcius/conventional-commits-linter@v1
       - run: npm test
