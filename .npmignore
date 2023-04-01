@@ -3,3 +3,5 @@ tests
 .gitignore
 .eslintignore
 .git
+.github
+*.md
