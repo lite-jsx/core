@@ -1,6 +1,6 @@
 {
   "name": "lite-jsx",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A simple library for generating HTML using JSX-like syntax",
   "main": "src/index.js",
   "types": "src/index.d.ts",
