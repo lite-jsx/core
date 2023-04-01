@@ -13,20 +13,27 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - name: Create release
+        uses: google-github-actions/release-please-action@v3
         id: release
         with:
           release-type: node
           package-name: lite-jsx
           pull-request-header: ""
-      - uses: actions/checkout@v3
+
+      - name: Checkout
+        uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
-      - uses: actions/setup-node@v3
+
+      - name: Setup node environment
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
+
+      - name: PUblish on NPM
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
