@@ -11,4 +11,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - uses: webiny/action-conventional-commits@v1.1.0
       - run: npm test
