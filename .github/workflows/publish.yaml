@@ -2,7 +2,7 @@ name: Publish on NPM
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   publish-npm:
@@ -15,4 +15,4 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
