@@ -10,6 +10,8 @@ With this library, you can use JSX as a template engine for server-side renderin
 
 The library is designed to be flexible, easy to use, and fully compatible with modern JavaScript frameworks and tools.
 
+---
+
 ## Installation
 
 You can install Lite JSX via npm:
