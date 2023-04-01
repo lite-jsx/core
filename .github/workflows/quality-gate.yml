@@ -7,9 +7,22 @@ jobs:
   quality-gate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node environment
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - uses: webiny/action-conventional-commits@v1.1.0
-      - run: npm test
+
+      - name: Check conventional commits
+        uses: webiny/action-conventional-commits@v1.1.0
+
+      - name: Run all tests
+        run: npm test
+
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_CLOUD_TOKEN }}
