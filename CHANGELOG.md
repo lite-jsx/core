@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/danprates/lite-jsx/compare/v1.0.0...v1.1.0) (2023-04-01)
+
+
+### Features
+
+* **action:** add conventional commits linter to quality gate ([#2](https://github.com/danprates/lite-jsx/issues/2)) ([9ac2f9c](https://github.com/danprates/lite-jsx/commit/9ac2f9c7b53a0aa2c70e8df1213d1fbfcd154881))
+
 ## 1.0.0 (2023-04-01)
 
 
