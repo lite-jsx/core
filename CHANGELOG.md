@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/danprates/lite-jsx/compare/v1.1.0...v1.1.1) (2023-04-01)
+
+
+### Bug Fixes
+
+* **action:** change trigger in publish ([#4](https://github.com/danprates/lite-jsx/issues/4)) ([f2fb1a0](https://github.com/danprates/lite-jsx/commit/f2fb1a05267836db6e17a740456b01b6035b835a))
+
 ## [1.1.0](https://github.com/danprates/lite-jsx/compare/v1.0.0...v1.1.0) (2023-04-01)
 
 
