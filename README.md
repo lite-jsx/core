@@ -76,7 +76,7 @@ Creates a new JSX element.
 
 If you'd like to contribute to Lite JSX, please feel free to submit a pull request or open an issue on GitHub:
 
-https://github.com/your-github-username/lite-jsx
+https://github.com/danprates/lite-jsx
 
 ## License
 
