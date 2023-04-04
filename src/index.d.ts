@@ -43,6 +43,13 @@ declare namespace LiteJSX {
    * @param tag - The tag name of the HTML element, or a component function
    * @param props - The attributes to set on the HTML element, or the props to pass to the component function
    * @param children - An array of children elements to add to the HTML element, or to pass to the component function
+   * @example
+   * const { h } = require("lite-jsx");
+   * const Home = ({ message }) => (
+   *   <div>
+   *     <h1>{message}</h1>
+   *   </div>
+   * );
    */
   function h(
     tag: string | Component,
