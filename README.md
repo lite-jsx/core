@@ -64,10 +64,42 @@ const Home = ({ message }) => {
 };
 
 module.exports = { Home };
-//# sourceMappingURL=home.js.map
 ```
 
 And that's it! You can now use your Lite JSX components in your application.
+
+---
+
+## Using Lite JSX with Express
+
+To use Lite JSX with Express, you can create a middleware that overrides the default `res.render` function to add support for JSX templates. Here's an example:
+
+```js
+const express = require("express");
+const liteJsx = require("lite-jsx");
+const Home = require("./home");
+
+const app = express();
+
+// Use the middleware to enable Lite JSX rendering in the Express app.
+app.use(liteJsx.__express);
+
+// Render the component using Express.
+app.get("/", (req, res) => {
+  const data = { message: "Hello, world!" };
+  res.render(Home, data);
+});
+
+app.listen(3000, () => {
+  console.log("Server is listening on port 3000!");
+});
+```
+
+To enable Lite JSX in our Express app, we're using the `liteJsx.__expres` middleware, which overrides the default `res.render` function to add support for JSX templates.
+
+This way, we can pass a JSX component to `res.render` and it will be rendered as HTML.
+
+And that's it! With these few lines of code, you can start using Lite JSX with Express to create powerful, dynamic web applications.
 
 ---
 
