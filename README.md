@@ -22,34 +22,52 @@ npm install lite-jsx
 
 ---
 
-## Creating Elements
+## Creating Components
 
-To create a JSX element, you can use the `h` function provided by Lite JSX:
+For a better development experience, we recommend using TypeScript to compile your components. It's easy to get started:
 
-```js
-const element = h("div", { class: "my-class" }, "Hello, world!");
+```bash
+$ npm install -D typescript
 ```
 
-This will create a div element with the class my-class and the text "Hello, world!".
+Next, add the following attributes to your tsconfig.json file:
 
-```html
-<div class="my-class">Hello, world!</div>
+```json
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "h"
+    // other options omitted for brevity
+  }
+}
 ```
 
-### Using JSX Syntax
-
-If you prefer to use JSX syntax instead of the `h` function, you can use a transpiler like Babel to convert your code:
+Once you have these in place, you can start writing components using Lite JSX like this:
 
 ```jsx
-const MyComponent = ({ name }) => <div class="my-class">Hello {name}!</div>;
-h(MyComponent, { name: "John" });
+import { h } from "lite-jsx";
+
+const Home = ({ message }) => (
+  <div>
+    <h1>{message}</h1>
+  </div>
+);
 ```
 
-This will create a div element with the class my-class and the text "Hello John!".
+TypeScript will compile your code into the following JavaScript:
 
-```html
-<div class="my-class">Hello John!</div>
+```js
+const { h } = require("lite-jsx");
+
+const Home = ({ message }) => {
+  return h("div", null, h("h1", null, message));
+};
+
+module.exports = { Home };
+//# sourceMappingURL=home.js.map
 ```
+
+And that's it! You can now use your Lite JSX components in your application.
 
 ---
 
