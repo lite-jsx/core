@@ -1,29 +1,9 @@
 /**
  * Middleware that uses lite-jsx to render JSX templates in an Express application.
  *
- * @param {Object} req - The Express request object.
- * @param {Object} res - The Express response object.
- * @param {Function} next - The Express next function.
- *
- * @example
- *
- * const express = require("express");
- * const app = express();
- * const liteJsx = require("lite-jsx");
- * const ShowMessage = require("./show-message");
- *
- * // Use the middleware to enable lite-jsx rendering in the Express app.
- * app.use(liteJsx.__express);
- *
- * app.get("/", (req, res) => {
- *   const data = { message: "Hello, World!" };
- *   res.render(ShowMessage, data);
- * });
- *
- * app.listen(3000, () => {
- *   console.log("Example app listening on port 3000!");
- * });
- *
+ * @param {import("express").Request} req - The Express request object.
+ * @param {import("express").Response} res - The Express response object.
+ * @param {import("express").NextFunction} next - The Express next function.
  * @returns {void}
  */
 const expressMiddleware = (req, res, next) => {
