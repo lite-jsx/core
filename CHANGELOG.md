@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/danprates/lite-jsx/compare/v1.1.2...v1.2.0) (2023-04-05)
+
+
+### Features
+
+* **express:** add initial express middleware ([9239b9d](https://github.com/danprates/lite-jsx/commit/9239b9df55193f493206a989015bcd4fd62f4983))
+* **types:** add express middleware to declaration ([edd1c65](https://github.com/danprates/lite-jsx/commit/edd1c65093e11be218baf47893c31fa9e8122a2f))
+
 ## [1.1.2](https://github.com/danprates/lite-jsx/compare/v1.1.1...v1.1.2) (2023-04-01)
 
 
