@@ -20,6 +20,7 @@ jobs:
           release-type: node
           package-name: lite-jsx
           pull-request-header: ""
+          commit-search-depth: 100
 
       - name: Checkout
         uses: actions/checkout@v3
