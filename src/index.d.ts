@@ -82,11 +82,7 @@ declare namespace LiteJSX {
    *   console.log("Example app listening on port 3000!");
    * });
    */
-  function expressMiddleware(
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ): void;
+  function __express(req: Request, res: Response, next: NextFunction): void;
 }
 
 /**
