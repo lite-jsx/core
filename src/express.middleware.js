@@ -18,7 +18,8 @@ const expressMiddleware = (req, res, next) => {
     }
     try {
       // Otherwise, render the JSX template using lite-jsx.
-      const html = "<!DOCTYPE html>" + template(data);
+      const html =
+        "<!DOCTYPE html>" + template({ ...data, $req: req, $res: res });
       return res.send(html);
     } catch (err) {
       // If there is an error, pass it to the Express error handler.
