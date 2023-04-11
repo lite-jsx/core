@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/danprates/lite-jsx/compare/v1.2.0...v1.3.0) (2023-04-11)
+
+
+### Features
+
+* **express:** add $req and $res to template props ([7839436](https://github.com/danprates/lite-jsx/commit/7839436b2b20bf40bfa0f20a20a99865c4fecb9a))
+* **render:** add nest render decorator ([2569b3c](https://github.com/danprates/lite-jsx/commit/2569b3c0641c2a1a188365a7190a99589f9542ac))
+
+
+### Bug Fixes
+
+* **types:** change express middleware name to __express ([26ebdf2](https://github.com/danprates/lite-jsx/commit/26ebdf2d1b24c7cfc2e569ce7cfd0994314f0f9e))
+
 ## [1.2.0](https://github.com/danprates/lite-jsx/compare/v1.1.2...v1.2.0) (2023-04-05)
 
 
