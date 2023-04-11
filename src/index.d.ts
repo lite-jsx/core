@@ -83,6 +83,20 @@ declare namespace LiteJSX {
    * });
    */
   function __express(req: Request, res: Response, next: NextFunction): void;
+
+  /**
+   * Defines a template to be rendered by the controller method decorated with this decorator.
+   *
+   * For example: `@Render<IHelloProps>(Hello)`
+   *
+   * @param template A function that returns the rendered template as a string.
+   * The function should accept one parameter of type T, which represents the data to be passed to the template.
+   *
+   * @see [Model-View-Controller](https://docs.nestjs.com/techniques/mvc)
+   */
+  export declare function Render<T>(
+    template: (data: T) => string
+  ): MethodDecorator;
 }
 
 /**
