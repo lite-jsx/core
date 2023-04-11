@@ -103,6 +103,60 @@ And that's it! With these few lines of code, you can start using Lite JSX with E
 
 ---
 
+## Using Lite JSX with NestJS
+
+In this section, we'll show you how to use Lite JSX with NestJS.
+
+### Setup
+
+To use Lite JSX with NestJS, we can use the @Render decorator provided by the Lite JSX library to add support for JSX templates. Here's an example:
+
+```ts
+// main.ts
+import { NestFactory } from "@nestjs/core";
+import { NestExpressApplication } from "@nestjs/platform-express";
+import { AppModule } from "./app.module";
+import * as liteJsx from "lite-jsx";
+
+async function bootstrap() {
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+  app.use(liteJsx.__express);
+  app.useStaticAssets("public");
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+In this example, we're using the `liteJsx.__express` middleware to enable Lite JSX rendering in our NestJS app. We're also using the `app.useStaticAssets` method to serve static assets (like CSS and JavaScript files) from the **public** directory.
+
+### Usage
+
+To enable Lite JSX in our NestJS app, we're using the `@Render` decorator provided by the Lite JSX library, which adds support for JSX templates. Here's an example:
+
+```ts
+// app.controller.ts
+import { Controller, Get } from "@nestjs/common";
+import { Home } from "./home";
+import { Render } from "lite-jsx";
+
+@Controller()
+export class AppController {
+  @Get()
+  @Render<{ message: string }>(Home)
+  getHello(): { message: string } {
+    return { message: "Hello, World!" };
+  }
+}
+```
+
+This way, we can pass a JSX component to `@Render` and it will be rendered as HTML.
+
+And that's it! With these few lines of code, you can start using Lite JSX with NestJS to create powerful, dynamic web applications.
+
+---
+
 ## API
 
 ```ts
