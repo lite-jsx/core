@@ -7,6 +7,17 @@
 
 Lite JSX is a lightweight JavaScript library that allows you to create and manipulate JSX elements using only vanilla JavaScript.
 
+## Table of contents
+
+- [Purpose](#purpose-of-the-project)
+- [Installation](#installation)
+- [Creating Components](#creating-components)
+- [Using Lite JSX with Express](#using-lite-jsx-with-express)
+- [Using Lite JSX with NestJS](#using-lite-jsx-with-nestjs)
+- [API](#api)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Purpose of the Project
 
 The purpose of this project is to offer a lightweight and straightforward method of using JSX syntax without relying on external dependencies.
