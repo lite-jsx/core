@@ -1,5 +1,10 @@
 # Lite JSX
 
+[![License][license-image]][license-url]
+[![Build Actions][build-image]][build-url]
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][npm-url]
+
 Lite JSX is a lightweight JavaScript library that allows you to create and manipulate JSX elements using only vanilla JavaScript.
 
 ## Purpose of the Project
@@ -32,7 +37,7 @@ $ npm install -D typescript
 
 Next, add the following attributes to your tsconfig.json file:
 
-```json
+```js
 {
   "compilerOptions": {
     "jsx": "react",
@@ -185,3 +190,11 @@ https://github.com/danprates/lite-jsx
 ## License
 
 Lite JSX is licensed under the [MIT License](https://github.com/danprates/lite-jsx/blob/master/LICENSE).
+
+[npm-url]: https://npmjs.org/package/lite-jsx
+[npm-image]: https://img.shields.io/npm/v/lite-jsx.svg?style=for-the-badge
+[downloads-image]: https://img.shields.io/npm/dm/lite-jsx.svg?style=for-the-badge
+[build-image]: https://img.shields.io/github/actions/workflow/status/danprates/lite-jsx/publish.yml?style=for-the-badge
+[build-url]: https://github.com/danprates/lite-jsx/actions/workflows/publish.yml
+[license-image]: https://img.shields.io/github/license/danprates/lite-jsx?style=for-the-badge
+[license-url]: https://github.com/danprates/lite-jsx/blob/master/LICENSE
