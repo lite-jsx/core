@@ -1,5 +1,5 @@
 {
-  "name": "lite-jsx",
+  "name": "@lite-jsx/core",
   "version": "1.3.0",
   "description": "A simple library for generating HTML using JSX-like syntax",
   "main": "src/index.js",
@@ -11,12 +11,12 @@
   "author": "Daniel Prates",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danprates/lite-jsx"
+    "url": "git+https://github.com/lite-jsx/core"
   },
   "bugs": {
-    "url": "https://github.com/danprates/lite-jsx/issues"
+    "url": "https://github.com/lite-jsx/core/issues"
   },
-  "homepage": "https://github.com/danprates/lite-jsx#readme",
+  "homepage": "https://github.com/lite-jsx/core#readme",
   "keywords": [
     "jsx",
     "html",
