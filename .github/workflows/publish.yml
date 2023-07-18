@@ -18,7 +18,7 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: lite-jsx
+          package-name: "@lite-jsx/core"
           pull-request-header: ""
           commit-search-depth: 100
 
@@ -33,7 +33,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
         if: ${{ steps.release.outputs.release_created }}
 
-      - name: PUblish on NPM
+      - name: Publish on NPM
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
