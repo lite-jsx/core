@@ -58,14 +58,14 @@ declare namespace LiteJSX {
   /**
    * Defines a template to be rendered by the controller method decorated with this decorator.
    *
-   * For example: `@Render<IHelloProps>(Hello)`
+   * For example: `@View<HelloProps>(Hello)`
    *
    * @param template A function that returns the rendered template as a string.
    * The function should accept one parameter of type T, which represents the data to be passed to the template.
    *
    * @see [Model-View-Controller](https://docs.nestjs.com/techniques/mvc)
    */
-  export function Render<T>(template: (data: T) => string): MethodDecorator;
+  export function View<T>(template: (data: T) => string): MethodDecorator;
 }
 
 /**

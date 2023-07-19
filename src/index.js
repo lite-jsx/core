@@ -1,7 +1,7 @@
 const { h } = require("./h");
-const { Render } = require("./render.decorator");
+const { View } = require("./view.decorator");
 
 module.exports = {
   h,
-  Render,
+  View,
 };
