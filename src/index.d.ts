@@ -1,5 +1,3 @@
-import { NextFunction, Request, Response } from "express";
-
 /**
  * This namespace represents the public API of the LiteJSX library
  */
@@ -58,33 +56,6 @@ declare namespace LiteJSX {
   ): string;
 
   /**
-   * Middleware that uses lite-jsx to render JSX templates in an Express application.
-   *
-   * @param req The Express request object.
-   * @param res The Express response object.
-   * @param next The Express next function.
-   * @returns {void}
-   * @example
-   * const express = require("express");
-   * const app = express();
-   * const liteJsx = require("lite-jsx");
-   * const Home = require("./home");
-   *
-   * // Use the middleware to enable lite-jsx rendering in the Express app.
-   * app.use(liteJsx.__express);
-   *
-   * app.get("/", (req, res) => {
-   *   const data = { message: "Hello, World!" };
-   *   res.render(Home, data);
-   * });
-   *
-   * app.listen(3000, () => {
-   *   console.log("Example app listening on port 3000!");
-   * });
-   */
-  function __express(req: Request, res: Response, next: NextFunction): void;
-
-  /**
    * Defines a template to be rendered by the controller method decorated with this decorator.
    *
    * For example: `@Render<IHelloProps>(Hello)`
@@ -94,9 +65,7 @@ declare namespace LiteJSX {
    *
    * @see [Model-View-Controller](https://docs.nestjs.com/techniques/mvc)
    */
-  export declare function Render<T>(
-    template: (data: T) => string
-  ): MethodDecorator;
+  export function Render<T>(template: (data: T) => string): MethodDecorator;
 }
 
 /**
