@@ -23,12 +23,5 @@
     "library",
     "simple"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "@types/express": "^4.17.17"
-  },
-  "dependencies": {
-    "fastify": "^4.20.0",
-    "fastify-plugin": "^4.5.1"
-  }
+  "license": "MIT"
 }
