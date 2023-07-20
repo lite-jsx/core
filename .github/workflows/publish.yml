@@ -3,7 +3,7 @@ name: Publish on NPM
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write
