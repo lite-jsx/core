@@ -12,7 +12,7 @@ Lite JSX is a lightweight JavaScript library that allows you to create and manip
 - [Purpose](#purpose-of-the-project)
 - [Installation](#installation)
 - [Creating Components](#creating-components)
-- [Using Lite JSX with Express](#using-lite-jsx-with-express)
+- [Examples](#examples)
 - [Using Lite JSX with NestJS](#using-lite-jsx-with-nestjs)
 - [API](#api)
 - [Contributing](#contributing)
@@ -33,7 +33,7 @@ The library is designed to be flexible, easy to use, and fully compatible with m
 You can install Lite JSX via npm:
 
 ```bash
-npm install lite-jsx
+npm install @lite-jsx/core
 ```
 
 ---
@@ -86,90 +86,12 @@ And that's it! You can now use your Lite JSX components in your application.
 
 ---
 
-## Using Lite JSX with Express
+## Examples
 
-To use Lite JSX with Express, you can create a middleware that overrides the default `res.render` function to add support for JSX templates. Here's an example:
+Here you can see a list of implementations using Lite JSX:
 
-```js
-const express = require("express");
-const liteJsx = require("lite-jsx");
-const Home = require("./home");
-
-const app = express();
-
-// Use the middleware to enable Lite JSX rendering in the Express app.
-app.use(liteJsx.__express);
-
-// Render the component using Express.
-app.get("/", (req, res) => {
-  const data = { message: "Hello, world!" };
-  res.render(Home, data);
-});
-
-app.listen(3000, () => {
-  console.log("Server is listening on port 3000!");
-});
-```
-
-To enable Lite JSX in our Express app, we're using the `liteJsx.__expres` middleware, which overrides the default `res.render` function to add support for JSX templates.
-
-This way, we can pass a JSX component to `res.render` and it will be rendered as HTML.
-
-And that's it! With these few lines of code, you can start using Lite JSX with Express to create powerful, dynamic web applications.
-
----
-
-## Using Lite JSX with NestJS
-
-In this section, we'll show you how to use Lite JSX with NestJS.
-
-### Setup
-
-To use Lite JSX with NestJS, we can use the @Render decorator provided by the Lite JSX library to add support for JSX templates. Here's an example:
-
-```ts
-// main.ts
-import { NestFactory } from "@nestjs/core";
-import { NestExpressApplication } from "@nestjs/platform-express";
-import { AppModule } from "./app.module";
-import * as liteJsx from "lite-jsx";
-
-async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
-
-  app.use(liteJsx.__express);
-  app.useStaticAssets("public");
-
-  await app.listen(3000);
-}
-bootstrap();
-```
-
-In this example, we're using the `liteJsx.__express` middleware to enable Lite JSX rendering in our NestJS app. We're also using the `app.useStaticAssets` method to serve static assets (like CSS and JavaScript files) from the **public** directory.
-
-### Usage
-
-To enable Lite JSX in our NestJS app, we're using the `@Render` decorator provided by the Lite JSX library, which adds support for JSX templates. Here's an example:
-
-```ts
-// app.controller.ts
-import { Controller, Get } from "@nestjs/common";
-import { Home } from "./home";
-import { Render } from "lite-jsx";
-
-@Controller()
-export class AppController {
-  @Get()
-  @Render<{ message: string }>(Home)
-  getHello(): { message: string } {
-    return { message: "Hello, World!" };
-  }
-}
-```
-
-This way, we can pass a JSX component to `@Render` and it will be rendered as HTML.
-
-And that's it! With these few lines of code, you can start using Lite JSX with NestJS to create powerful, dynamic web applications.
+- [Lite JSX + Express](https://github.com/lite-jsx/express)
+- [Lite JSX + Fastify](https://github.com/lite-jsx/fastify)
 
 ---
 
@@ -196,16 +118,16 @@ Creates a new JSX element.
 
 If you'd like to contribute to Lite JSX, please feel free to submit a pull request or open an issue on GitHub:
 
-https://github.com/danprates/lite-jsx
+https://github.com/lite-jsx/core
 
 ## License
 
-Lite JSX is licensed under the [MIT License](https://github.com/danprates/lite-jsx/blob/master/LICENSE).
+Lite JSX is licensed under the [MIT License](https://github.com/lite-jsx/core/blob/master/LICENSE).
 
-[npm-url]: https://npmjs.org/package/lite-jsx
-[npm-image]: https://img.shields.io/npm/v/lite-jsx.svg?style=for-the-badge
-[downloads-image]: https://img.shields.io/npm/dm/lite-jsx.svg?style=for-the-badge
-[build-image]: https://img.shields.io/github/actions/workflow/status/danprates/lite-jsx/publish.yml?style=for-the-badge
-[build-url]: https://github.com/danprates/lite-jsx/actions/workflows/publish.yml
-[license-image]: https://img.shields.io/github/license/danprates/lite-jsx?style=for-the-badge
-[license-url]: https://github.com/danprates/lite-jsx/blob/master/LICENSE
+[npm-url]: https://npmjs.org/package/@lite-jsx/core
+[npm-image]: https://img.shields.io/npm/v/@lite-jsx/core.svg?style=for-the-badge
+[downloads-image]: https://img.shields.io/npm/dm/@lite-jsx/core.svg?style=for-the-badge
+[build-image]: https://img.shields.io/github/actions/workflow/status/lite-jsx/core/publish.yml?style=for-the-badge
+[build-url]: https://github.com/lite-jsx/core/actions/workflows/publish.yml
+[license-image]: https://img.shields.io/github/license/lite-jsx/core?style=for-the-badge
+[license-url]: https://github.com/lite-jsx/core/blob/master/LICENSE
