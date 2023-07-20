@@ -6,3 +6,4 @@ tests
 .github
 *.md
 *.properties
+docs
