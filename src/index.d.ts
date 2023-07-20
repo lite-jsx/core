@@ -49,7 +49,7 @@ declare namespace LiteJSX {
    *   </div>
    * );
    */
-  function h(
+  export function h(
     tag: string | Component,
     props?: Attributes | undefined | null,
     ...children: ChildArray
