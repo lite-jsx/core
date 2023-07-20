@@ -1,5 +1,5 @@
 const { strictEqual } = require("node:assert");
-const { sanitize } = require("../src/sanitize");
+const { sanitize } = require("../lib/sanitize");
 
 module.exports = () => {
   // should sanitize special characters

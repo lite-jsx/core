@@ -2,8 +2,8 @@
   "name": "@lite-jsx/core",
   "version": "1.3.0",
   "description": "A simple library for generating HTML using JSX-like syntax",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "type": "commonjs",
   "scripts": {
     "test": "node tests"

@@ -1,5 +1,5 @@
 const { strictEqual } = require("node:assert");
-const { stringify } = require("../src/stringify");
+const { stringify } = require("../lib/stringify");
 
 module.exports = () => {
   // should stringify a string child

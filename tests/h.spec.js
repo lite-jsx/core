@@ -1,5 +1,5 @@
 const { strictEqual } = require("node:assert");
-const { h } = require("../src/h");
+const { h } = require("../lib/h");
 
 module.exports = () => {
   // should render a div with a class and some text content
