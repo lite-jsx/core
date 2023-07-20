@@ -1,5 +1,10 @@
 # Lite JSX
 
+[![License][license-image]][license-url]
+[![Build Actions][build-image]][build-url]
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][npm-url]
+
 Lite JSX is a lightweight JavaScript library that allows you to create and manipulate JSX elements using only vanilla JavaScript.
 
 ## Purpose of the Project
