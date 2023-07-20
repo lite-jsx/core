@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.0.0](https://github.com/lite-jsx/core/compare/v1.3.0...v2.0.0) (2023-07-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* The decoration name has been changed.
+* The express middleware has been removed.
+* The project name has been changed.
+
+### Features
+
+* rename Render to View decorator ([b94364a](https://github.com/lite-jsx/core/commit/b94364ac3d7e1f7b7ef6fd5403555a1b36a860b4))
+
+
+### Miscellaneous Chores
+
+* rename project in publish action ([6c296f5](https://github.com/lite-jsx/core/commit/6c296f5b00fa452fa21d901b2e42609f5b17d8b2))
+
+
+### Code Refactoring
+
+* move express middleware to a separated project ([2ef10b7](https://github.com/lite-jsx/core/commit/2ef10b7d30b0624ef19afc6530fd59741815e7c1))
+
 ## [1.3.0](https://github.com/danprates/lite-jsx/compare/v1.2.0...v1.3.0) (2023-04-11)
 
 
