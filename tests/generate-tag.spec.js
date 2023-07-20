@@ -1,5 +1,5 @@
 const { strictEqual } = require("node:assert");
-const { generateTag } = require("../src/generate-tag");
+const { generateTag } = require("../lib/generate-tag");
 
 module.exports = () => {
   // should render correct tag when valid params are provided
