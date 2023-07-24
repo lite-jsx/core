@@ -1,6 +1,6 @@
 :root {
-  --theme-color: #e50914;
-  --theme-color-dark: #b20710;
+  --theme-color: #29abe2;
+  --theme-color-dark: #29abe2;
 
   --text-color-base: #2e2e46;
   --text-color-secondary: #646473;
@@ -96,7 +96,7 @@ section.cover.show ~ .sidebar-toggle {
 .cover-main .netflix-logo .logo {
   width: 125px;
   height: 32px;
-  background: url('images/Netflix_Logo.png');
+  background: url("images/Netflix_Logo.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -132,7 +132,7 @@ section.cover.show ~ .sidebar-toggle {
 
 .cover-main .buttons a:before,
 .cover-main .buttons a:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   width: 100%;
